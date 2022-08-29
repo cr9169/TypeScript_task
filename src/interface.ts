@@ -1,10 +1,10 @@
 import Genre from "./enums";
 
-export interface Book {
+export interface IBook {
     name: string,
     author: string,
     uid: number,
     genre: Genre
 }
 
-export default Book;
+export default IBook;
