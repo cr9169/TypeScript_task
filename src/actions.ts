@@ -5,7 +5,7 @@ function checkSearchValueType(input: string): boolean {
 }
 
 function createNewBook() {
-
+    
 }
 
 function getBookByName() {

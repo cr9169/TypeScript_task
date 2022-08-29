@@ -4,23 +4,28 @@ import express from "express";
 import {checkSearchValueType, createNewBook, getBookByID, getBookByName} from "./actions";
 const app = express();
 const PORT = config.SERVER_PORT;
+const booksArray : number[] = []; 
 
 let age : number = 10; 
 console.log(config);
 
 app.use(express.json());
 
-/*app.post('/api/numbers/prime/validate', (request, response) => {
-    
-    isAllPrimes = true;
+app.post('/api/validate', (request, response) => {
 
-    let array = request.body;
-    array.forEach((element) => {
-        if(!isRishoni(element, element - 1))
-            isAllPrimes = false;
-    }, this);
+    const book = request.body;
+    console.log(typeof(book));
 
-    response.status(200).send(isAllPrimes.toString());
-});*/
+    let array : any[] = request.body;
+
+    array.forEach((element: any) => {
+            console.log(element);
+        }, this);
+    response.status(200).send("success!!!");
+});
+
+app.listen(PORT, () => {
+    console.log("server is listening to port " + PORT);
+});
 
 
